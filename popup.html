@@ -1,19 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>C++ Snippet Manager</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <h1>C++ Snippets</h1>
-    <textarea id="new-snippet" placeholder="Write your C++ code here..."></textarea>
+
+    <!-- Dropdown to Select Predefined Snippets -->
+    <select id="snippet-library">
+      <option value="">-- Select a Predefined Snippet --</option>
+      <option value="include-std">
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+      </option>
+      <option value="function">
+void exampleFunction() {
+    // Your code here
+}
+      </option>
+      <option value="switch">
+switch (value) {
+    case 1:
+        // Code for case 1
+        break;
+    case 2:
+        // Code for case 2
+        break;
+    default:
+        // Default case
+        break;
+}
+      </option>
+      <option value="vector">
+vector<int> numbers = {1, 2, 3, 4, 5};
+for (int num : numbers) {
+    cout << num << endl;
+}
+      </option>
+    </select>
+    <button id="insert-snippet">Insert Snippet</button>
+
+    <!-- Textarea for Writing/Editing Snippets -->
+    <textarea id="new-snippet">
+#include <iostream>
+
+int main() {
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
+}
+    </textarea>
     <button id="save-snippet">Save Snippet</button>
+
+    <!-- Snippet List -->
     <div id="snippets-list"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- Include Prism.js for Syntax Highlighting -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+    ></script>
     <script src="popup.js"></script>
   </body>
 </html>
